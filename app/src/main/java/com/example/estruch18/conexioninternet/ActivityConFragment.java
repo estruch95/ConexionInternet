@@ -16,7 +16,7 @@ import com.example.estruch18.conexioninternet.Fragments.FragmentDinamico1;
 
 public class ActivityConFragment extends AppCompatActivity {
 
-    private Button btnCambiar, btnNavDrawer;
+    private Button btnCambiar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,6 @@ public class ActivityConFragment extends AppCompatActivity {
         setContentView(R.layout.activity_con_fragment);
 
         btnCambiar = (Button)findViewById(R.id.btnCambiar);
-        btnNavDrawer = (Button)findViewById(R.id.btnNav_drawer);
 
         //CARGAMOS EL FRAGMENT
         FragmentDinamico fd = new FragmentDinamico();
@@ -40,12 +39,6 @@ public class ActivityConFragment extends AppCompatActivity {
         //Reemplazar fragment
         getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fd1).commit();
 
-    }
-
-    public void accionBtnNavDrawer(View v){
-
-        Intent i = new Intent(getApplicationContext(), NavigationDrawer.class);
-        startActivity(i);
     }
 
     public void eliminarFragment(){

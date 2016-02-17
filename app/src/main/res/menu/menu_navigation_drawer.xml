@@ -2,34 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:checked="true"
-            android:title="@string/home_item" />
-        <item
-            android:id="@+id/nav_productos"
-            android:title="@string/productos_item" />
-        <item
-            android:id="@+id/nav_carrito"
-            android:title="@string/compras_item" />
-        <item
-            android:id="@+id/nav_ordenes"
-            android:title="@string/ordenes_item" />
-        <item
-            android:id="@+id/nav_facturas"
-            android:title="@string/facturas_item" />
 
-        <!-- Sección de configuración -->
         <item
-            android:id="@+id/configuration_section"
-            android:title="@string/configuracion_item">
-            <menu>
-                <item
-                    android:id="@+id/nav_log_out"
-                    android:icon="@android:drawable/ic_lock_power_off"
-                    android:title="@string/log_out_item" />
-            </menu>
-        </item>
+            android:id="@+id/item_1"
+            android:checked="true"
+            android:title="@string/Item_1" />
+        <item
+            android:id="@+id/item_2"
+            android:title="@string/Item_2" />
+        <item
+            android:id="@+id/item_3"
+            android:title="@string/Item_3" />
+
     </group>
 
 </menu>

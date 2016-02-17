@@ -12,7 +12,8 @@
         android:id="@+id/btnCambiar"
         android:onClick="accionBtnCambiar"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,13 +24,4 @@
 
     </RelativeLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nav drawer"
-        android:id="@+id/btnNav_drawer"
-        android:onClick="accionBtnNavDrawer"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/btnCambiar" />
 </RelativeLayout>

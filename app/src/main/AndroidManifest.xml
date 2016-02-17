@@ -25,10 +25,6 @@
             android:name=".ActivityConFragment"
             android:label="@string/title_activity_activity_con_fragment" >
         </activity>
-        <activity
-            android:name=".NavigationDrawer"
-            android:label="@string/title_activity_navigation_drawer" >
-        </activity>
     </application>
 
 </manifest>
