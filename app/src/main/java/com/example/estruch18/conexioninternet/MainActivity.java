@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvPor;
     private Button btnSiguiente;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings) {
 
             Intent prefs = new Intent(getApplicationContext(), Preferencias.class);
@@ -224,31 +226,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private class CargarXmlTask extends AsyncTask<Void,Void,List<Noticia>> {
-
-        @Override
-        protected List<Noticia> doInBackground(Void... voids) {
-
-            InputStream inputStream = null;
-            List<Noticia> listaNoticias = null;
-
-            inputStream = downloadXML();
-            listaNoticias = parseXML(inputStream);
-
-            return listaNoticias;
-        }
-
-        @Override
-        protected void onPostExecute(List<Noticia> noticias) {
-
-            for(Noticia n : noticias){
-
-                Log.d("datos", "Titulo de noticia: "+n.getTitulo());
-
-            }
-        }
-    }
-
     public InputStream downloadXML(){
 
         InputStream is = null;
@@ -299,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
         return  is;
     }
 
+    /*
     public List<Noticia> parseXML(InputStream inputStream){
 
         List<Noticia> noticias = null;
@@ -307,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
-            parser.setInput(inputStream, null);
+            parser.setInput(inputStream, "utf-8");
 
             int evento = parser.getEventType();
 
@@ -370,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
 
         return noticias;
     }
-
+    */
 
 
     public Bitmap downloadImage(){

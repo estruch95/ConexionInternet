@@ -12,13 +12,24 @@
         android:id="@+id/btnCambiar"
         android:onClick="accionBtnCambiar"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/btnCambiar"
         android:layout_alignParentStart="true"
-        android:id="@+id/fragmentContainer"></RelativeLayout>
+        android:id="@+id/fragmentContainer">
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nav drawer"
+        android:id="@+id/btnNav_drawer"
+        android:onClick="accionBtnNavDrawer"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/btnCambiar" />
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.estruch18.conexioninternet;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import com.example.estruch18.conexioninternet.Fragments.FragmentDinamico1;
 
 public class ActivityConFragment extends AppCompatActivity {
 
-    private Button btnCambiar;
+    private Button btnCambiar, btnNavDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class ActivityConFragment extends AppCompatActivity {
         setContentView(R.layout.activity_con_fragment);
 
         btnCambiar = (Button)findViewById(R.id.btnCambiar);
+        btnNavDrawer = (Button)findViewById(R.id.btnNav_drawer);
 
         //CARGAMOS EL FRAGMENT
         FragmentDinamico fd = new FragmentDinamico();
@@ -38,6 +40,12 @@ public class ActivityConFragment extends AppCompatActivity {
         //Reemplazar fragment
         getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fd1).commit();
 
+    }
+
+    public void accionBtnNavDrawer(View v){
+
+        Intent i = new Intent(getApplicationContext(), NavigationDrawer.class);
+        startActivity(i);
     }
 
     public void eliminarFragment(){
@@ -58,7 +66,7 @@ public class ActivityConFragment extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_con, menu);
+        //getMenuInflater().inflate(R.menu.menu_activity_con, menu);
         return true;
     }
 
@@ -70,10 +78,11 @@ public class ActivityConFragment extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        /*
         if (id == R.id.action_settings) {
             return true;
         }
-
+        */
         return super.onOptionsItemSelected(item);
     }
 }

@@ -7,4 +7,19 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_activity_con_fragment">ActivityConFragment</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+
+    <string name="home_item">Home</string>
+    <string name="productos_item">Productos</string>
+    <string name="compras_item">Carrito</string>
+    <string name="ordenes_item">Ordenes</string>
+    <string name="facturas_item">Facturas</string>
+    <string name="log_out_item">Cerrar Sesión</string>
+    <string name="configuracion_item">Configuración</string>
+
+    <string name="drawer_open">Abierto</string>
+    <string name="drawer_close">Cerrado</string>
+    <string name="mTitle">NavigationDraver</string>
+
 </resources>
+
