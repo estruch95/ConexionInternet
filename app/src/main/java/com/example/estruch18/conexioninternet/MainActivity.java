@@ -67,14 +67,9 @@ public class MainActivity extends AppCompatActivity {
 
         ProcesoDescargaImagen1 thread1 = new ProcesoDescargaImagen1();
         thread1.execute();
-        */
 
         ProcesoCargaBarraProgreso thread2 = new ProcesoCargaBarraProgreso();
         thread2.execute(0);
-
-        /*
-        CargarXmlTask thread3 = new CargarXmlTask();
-        thread3.execute();
         */
 
         //Para comprobar que las preferencias permanecen guardadas en la app
@@ -205,8 +200,6 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-
-
         @Override
         protected void onProgressUpdate(Integer... valores) {
 
@@ -225,131 +218,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-    public InputStream downloadXML(){
-
-        InputStream is = null;
-        HttpURLConnection conexion = null;
-        ConnectivityManager cManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo nInfo = cManager.getActiveNetworkInfo();
-
-        if(nInfo != null && nInfo.isConnected()){
-
-            try {
-
-                URL url = new URL("http://212.170.237.10/rss/rss.aspx");
-                conexion = (HttpURLConnection) url.openConnection();
-
-                conexion.setReadTimeout(10000);
-                conexion.setConnectTimeout(15000);
-                conexion.setRequestMethod("GET");
-
-                conexion.connect();
-                int responseCode = conexion.getResponseCode();
-                Log.d("info", "Codigo de respuesta: " + responseCode);
-
-                is = conexion.getInputStream();
-
-            }
-            catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-            finally {
-
-                try {
-                    is.close();
-                    conexion.disconnect();
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }
-        else{
-            Log.d("info", "No hay conexion de red");
-        }
-
-        return  is;
-    }
-
-    /*
-    public List<Noticia> parseXML(InputStream inputStream){
-
-        List<Noticia> noticias = null;
-
-        XmlPullParser parser = Xml.newPullParser();
-
-        try {
-
-            parser.setInput(inputStream, "utf-8");
-
-            int evento = parser.getEventType();
-
-            Noticia noticiaActual = null;
-
-            while (evento != XmlPullParser.END_DOCUMENT) {
-                String etiqueta = null;
-
-                switch (evento) {
-
-                    case XmlPullParser.START_DOCUMENT:
-
-                        noticias = new ArrayList<Noticia>();
-                        break;
-
-                    case XmlPullParser.START_TAG:
-
-                        etiqueta = parser.getName();
-
-                        if (etiqueta.equals("item")) {
-
-                            noticiaActual = new Noticia();
-                        }
-                        else if (noticiaActual != null) {
-
-                            if (etiqueta.equals("link")) {
-
-                                noticiaActual.setLink(parser.nextText());
-                            }
-                            else if (etiqueta.equals("description")) {
-
-                                noticiaActual.setDescripcion(parser.nextText());
-                            }
-                            else if (etiqueta.equals("title")) {
-
-                                noticiaActual.setTitulo(parser.nextText());
-                            }
-                        }
-                        break;
-
-                    case XmlPullParser.END_TAG:
-
-                        etiqueta = parser.getName();
-
-                        if (etiqueta.equals("item") && noticiaActual != null) {
-
-                            noticias.add(noticiaActual);
-                        }
-                        break;
-                }
-
-                evento = parser.next();
-            }
-        }
-        catch (Exception ex) {
-
-            throw new RuntimeException(ex);
-        }
-
-
-        return noticias;
-    }
-    */
-
 
     public Bitmap downloadImage(){
 
@@ -455,6 +323,8 @@ public class MainActivity extends AppCompatActivity {
 
         return bitmap;
     }
+
+
 
 
 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="rotation"
+        android:title="Rotacion de pantalla">
+
+        <CheckBoxPreference
+            android:key="rotation_option"
+            android:title="Activar rotacion de pantalla"
+            android:summary="Permite la rotacion de pantalla en el dispositivo.">
+
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="sound"
+        android:title="Opciones de sonido">
+
+        <MultiSelectListPreference
+            android:key="sound_options"
+            android:title="Ajustes de sonido"
+            android:summary="Permite realizar los ajustes adecuados de sonido"
+            android:dialogTitle="Selecciona ajuste:"
+            android:entries="@array/sound_options"
+            android:entryValues="@array/sound_options">
+
+        </MultiSelectListPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="background"
+        android:title="Color de background">
+
+        <ListPreference
+            android:key="background_options"
+            android:title="Ajustes de background"
+            android:summary="Permite modificar el color de fondo"
+            android:dialogTitle="Selecciona color de fondo:"
+            android:entries="@array/background_options"
+            android:entryValues="@array/background_options">
+
+        </ListPreference>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="name"
+        android:title="Usuario">
+
+        <EditTextPreference
+            android:key="name_option"
+            android:title="Nombre de usuario"
+            android:summary="Permite modificar el nombre de usuario."
+            android:dialogTitle="Introduce tu nombre de usuario:">
+
+        </EditTextPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:key="multi_ventana_extras"
+        android:title="Extras">
+
+        <PreferenceCategory
+            android:key="extras"
+            android:title="Opciones extra">
+
+            <CheckBoxPreference
+                android:key="extra_option1"
+                android:title="Opcion extra 1"
+                android:summary="Sin funcionalidad">
+
+            </CheckBoxPreference>
+
+            <CheckBoxPreference
+                android:key="extra_option2"
+                android:title="Opcion extra 2"
+                android:summary="Sin funcionalidad">
+
+            </CheckBoxPreference>
+
+            <CheckBoxPreference
+                android:key="extra_option2"
+                android:title="Opcion extra 2"
+                android:summary="Sin funcionalidad">
+
+            </CheckBoxPreference>
+
+        </PreferenceCategory>
+
+    </PreferenceScreen>
+
+</PreferenceScreen>
